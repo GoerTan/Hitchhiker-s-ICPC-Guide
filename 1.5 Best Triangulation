@@ -1,0 +1,17 @@
+m[][] = 0;
+for(len=3; len<n; len++)
+for(a=0; a+len<n; a++)
+{
+  b=a+len; m[a][b]=1e+10;
+  for(c=a+1; a+len<n; a++)
+  {
+    b=a+len; m[a][b]=1e+10;
+    for(c=a+1; c<b; c++)
+    {
+      double t=m[a][c]+m[c][b];
+      if(c>a+1) t+=length(a); //(a to c)
+      if(c<b-1) t+=length(c); //(c to b)
+      m[a][b] <? = t;
+    }
+  }
+}
